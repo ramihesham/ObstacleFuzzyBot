@@ -1,6 +1,30 @@
 import numpy as np
 import skfuzzy.control as ctrl
 import skfuzzy as fuzz
+from machine import Pin, time_pulse_us
+
+TRIGGER_PIN = 2
+ECHO_PIN = 3
+
+# Initialize trigger and echo pins
+trigger = Pin(TRIGGER_PIN, Pin.OUT)
+echo = Pin(ECHO_PIN, Pin.IN)
+
+def get_distance():
+    # Send a 10us pulse.
+    trigger.low()
+    time.sleep_us(5)
+    trigger.high()
+    time.sleep_us(10)
+    trigger.low()
+
+    # Measure the duration of the incoming pulse
+    duration = time_pulse_us(echo, Pin.HIGH)
+    
+    # Calculate distance in cm (sound travels at about 343m/s, which is roughly 0.0343cm/us)
+    distance = (duration / 2) * 0.0343
+
+    return distance
 
 # Define linguistic variables
 distance = ctrl.Antecedent(np.arange(0, 101, 1), 'distance')
@@ -26,8 +50,8 @@ obstacle_avoidance = ctrl.ControlSystem([rule1, rule2, rule3])
 avoidance_decision = ctrl.ControlSystemSimulation(obstacle_avoidance)
 
 # Test
-avoidance_decision.input['distance'] = 15
+sensor_distance = get_distance()
+avoidance_decision.input['distance'] = sensor_distance
 avoidance_decision.compute()
 
 print(avoidance_decision.output['action'])
-action.view(sim=avoidance_decision)
