@@ -1,5 +1,6 @@
 from machine import Pin,PWM
-import time 
+import time
+import utime
 #import fuzzy_w_ultrasonic
 
 ENA = PWM(Pin(4)) #The main control on IN1 and IN2
@@ -75,7 +76,7 @@ def stop():
     #else:
      #   stop()
         
-    #time.sleep(0.1) 
+    #utime.sleep(0.1) 
 
 #else: 
         #line follower
