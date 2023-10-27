@@ -2,6 +2,7 @@ import numpy as np
 import skfuzzy.control as ctrl
 import skfuzzy as fuzz
 from machine import Pin, time_pulse_us
+import time
 
 TRIGGER_PIN = 2
 ECHO_PIN = 3
