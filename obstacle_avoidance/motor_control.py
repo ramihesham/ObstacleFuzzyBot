@@ -50,8 +50,13 @@ def stop():
     Lrev_motor.low()
     Rrev_motor.low()
 
-if (obstical_avioder.avoidance_decision.output) > 50 :
-    right()
-
-elif (obstical_avioder.avoidance_decision.output) < 50 :
+if 0 <= fuzzy_w_ultrasonic.avoidance_decision.output < 34:
+    left()
+elif 34 <= fuzzy_w_ultrasonic.avoidance_decision.output <= 66:
     forward()
+elif 67 <= fuzzy_w_ultrasonic.avoidance_decision.output <= 100:
+    right()
+else:
+    stop()
+    
+time.sleep(0.1)
