@@ -28,16 +28,16 @@ front_sensor['medium'] = fuzz.trimf(front_sensor_reading.universe, [100, 200, 30
 front_sensor['far'] = fuzz.trapmf(front_sensor_reading.universe, [250, 350, 400, 400])
 
 # Membership functions for left_motor
-left_motor['turn_left'] = fuzz.trapmf(left_motor_RPM.universe, [-200, -200, 45, 90])
-left_motor['go_straight'] = fuzz.trimf(left_motor_RPM.universe, [-90, 0, 90])
-left_motor['turn_right'] = fuzz.trapmf(left_motor_RPM.universe, [76.4, 76.4, 104, 159])
-left_motor['turn_right'] = fuzz.trapmf(left_motor_RPM.universe, [117.5, 172.5, 200, 200])
+left_motor['-ve_fast'] = fuzz.trapmf(left_motor_RPM.universe, [-200, -200, 45, 90])
+left_motor['zero'] = fuzz.trimf(left_motor_RPM.universe, [-90, 0, 90])
+left_motor['+ve_slow'] = fuzz.trapmf(left_motor_RPM.universe, [76.4, 76.4, 104, 159])
+left_motor['+ve_fast'] = fuzz.trapmf(left_motor_RPM.universe, [117.5, 172.5, 200, 200])
 
 # Membership functions for right_motor
-right_motor['turn_left'] = fuzz.trapmf(right_motor_RPM.universe, [-200, -200, 45, 90])
-right_motor['go_straight'] = fuzz.trimf(right_motor_RPM.universe, [-90, 0, 90])
-right_motor['turn_right'] = fuzz.trapmf(right_motor_RPM.universe, [76.4, 76.4, 104, 159])
-right_motor['turn_right'] = fuzz.trapmf(right_motor_RPM.universe, [117.5, 172.5, 200, 200])
+right_motor['-ve_fast'] = fuzz.trapmf(right_motor_RPM.universe, [-200, -200, 45, 90])
+right_motor['zero'] = fuzz.trimf(right_motor_RPM.universe, [-90, 0, 90])
+right_motor['+ve_slow'] = fuzz.trapmf(right_motor_RPM.universe, [76.4, 76.4, 104, 159])
+right_motor['+ve_fast'] = fuzz.trapmf(right_motor_RPM.universe, [117.5, 172.5, 200, 200])
 
 # Fuzzy rules
 rule1 = ctrl.Rule(distance['near'], action['turn_left'])
