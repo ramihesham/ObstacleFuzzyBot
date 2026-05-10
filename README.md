@@ -1,6 +1,6 @@
 # 🤖 Mobile Robot for Gauge Inspection
 
-An autonomous mobile robot that navigates industrial environments and reads analogue pressure gauges using a **Neuro-Fuzzy system** — combining Fuzzy Logic for motion control and a Convolutional Neural Network (CNN) for gauge reading.
+An autonomous mobile robot that navigates industrial environments and reads analogue pressure gauges using a **Neuro-Fuzzy system** combining Fuzzy Logic for motion control and a Convolutional Neural Network (CNN) for gauge reading.
 
 ---
 
@@ -104,7 +104,6 @@ The system uses **27 fuzzy rules** (3³ combinations).
 
 ### Pipeline
 
-```
 Camera Frame
     │
     ▼
@@ -131,7 +130,6 @@ CNN Inference  (classify gauge reading)
     │
     ▼
 Output: Pressure Value (psi)
-```
 
 ### CNN Training
 
