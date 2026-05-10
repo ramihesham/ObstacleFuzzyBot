@@ -147,12 +147,6 @@ CNN Inference  (classify gauge reading)
     
 Output: Pressure Value (psi)
 
-### CNN Training
-
-- **Dataset:** Images of pressure gauges at each increment from 0–100 psi
-- **Sources:** Kaggle, Google Dataset Search, ImageNet
-- **Approach:** The CNN takes raw pixel data, processes it through convolutional layers to extract features (edges, curves, needle position), and outputs the gauge reading
-- **Alternative method:** Pointer angle calculation using user-defined min/max gauge values, with optional OCR for automatic scale detection
 
 ---
 
