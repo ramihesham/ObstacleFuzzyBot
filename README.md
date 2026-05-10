@@ -108,27 +108,43 @@ Camera Frame
     │
     ▼
 
+    
+
 <img width="185" height="186" alt="image" src="https://github.com/user-attachments/assets/9700ec93-129b-4a3a-b1fb-c3092b317a4d" />
+
 
 Canny Edge Detection  (noise reduction) 
     │
     ▼
 
+
+    
+
 <img width="196" height="196" alt="image" src="https://github.com/user-attachments/assets/899c7818-4537-464c-a89f-9b26e2be1dad" />
+
 
 Hough Circle Transform  (detect gauge dial)
     │
     ▼
+
+
+    
 <img width="193" height="188" alt="image" src="https://github.com/user-attachments/assets/3a53e25f-2dea-49bb-bf8e-7de171fb6eb6" />
+
 
 Hough Line Transform  (detect needle)
     │
     ▼
+
+
+    
 <img width="167" height="181" alt="image" src="https://github.com/user-attachments/assets/5beb50b3-f73e-4e65-bfa5-d65edb278524" />
+
 
 CNN Inference  (classify gauge reading)
     │
     ▼
+    
 Output: Pressure Value (psi)
 
 ### CNN Training
